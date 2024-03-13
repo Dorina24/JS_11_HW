@@ -67,4 +67,58 @@ console.log(`Suma pătratelor numerelor de la 1 la 10 este: ${sumaPatratelor}.`)
 //afișează un mesaj care indică pentru fiecare număr din array dacă 
 //numărul este par sau impar.
 
-const nums = [1, 12, 30, 21]
+const nums = [1, 12, 30, 21];
+for (let i = 0; i < nums.length; i++) 
+{
+    if (nums[i] % 2 === 0) {
+        console.log(`${nums[i]} este un număr par.`);
+    } else {
+        console.log(`${nums[i]} este un număr impar.`);
+    }
+};
+
+// Numere Prime în Interval: Se dau două numere x = 12, y = 35, 
+//afișează toate numerele prime din intervalul x, y..
+const x = 12;
+const y = 35;
+console.log(`Numere prime în intervalul ${x} - ${y}:`);
+for (let i = x; i <= y; i++) {
+    let prime = true;
+    for (let j = 2; j <= Math.sqrt(i); j++)     // aici trebuia inlocuit cu sqrt(i), nu sqrt(numbertocheck)
+    {
+        if (i % j === 0) {
+            prime = false;
+            break;
+        }
+    }
+    if (prime) {
+        console.log(i);
+    }
+}
+
+//Afișarea Tabelului de Multiplicare: Afișează tabelul de multiplicare 
+//pentru numerele de la 1 la 10 (tabla înmulțirii).
+
+console.log("Tabelul de multiplicare:");
+for (let i = 1; i <= 10; i++) {
+    for (let j = 1; j <= 10; j++) {
+        console.log(`${i} * ${j} = ${i * j}`);
+    }
+    console.log();
+}
+
+//Jocul de FizzBuzz:Scrie un program care afișează numerele de la 1 la 50. 
+//Pentru fiecare multiplu de 3, afișează "Fizz". Pentru fiecare 
+//multiplu de 5, afișează "Buzz". Pentru numerele care sunt simultan 
+//multipli de 3 și 5, afișează "FizzBuzz".
+
+for (let i = 1; i <= 50; i++) 
+{
+    if ((i % 3 === 0) && (i % 5 === 0)) 
+        { console.log("FizzBuzz"); } 
+            else if (i % 3 === 0) 
+                  {  console.log("Fizz");}
+                    else if (i % 5 === 0) 
+                          {console.log("Buzz");}
+                    else { console.log(i); }
+}
